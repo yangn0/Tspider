@@ -84,7 +84,8 @@ for d in InfoList:
 # 去重
 idSet=list(set(idList))
 
-for nid in idList:
+for n,nid in enumerate(idList):
+    print(n)
     try:
         jiexi_data.jiexi_ziye_data(url % nid)
     except:
@@ -92,3 +93,5 @@ for nid in idList:
     # r = requests.get(url % nid, headers=headers)
     # soup = BeautifulSoup(r.text, 'lxml')
     # title = soup.select('h1')[1].text.strip()
+
+print("完成")
