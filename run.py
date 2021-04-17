@@ -85,7 +85,10 @@ for d in InfoList:
 idSet=list(set(idList))
 
 for nid in idList:
-    jiexi_data.jiexi_ziye_data(url % nid)
+    try:
+        jiexi_data.jiexi_ziye_data(url % nid)
+    except:
+        print("pass")
     # r = requests.get(url % nid, headers=headers)
     # soup = BeautifulSoup(r.text, 'lxml')
     # title = soup.select('h1')[1].text.strip()
