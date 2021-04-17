@@ -69,7 +69,7 @@ def jiexi_ziye_data(url):
         bigPicUrl=smpicUrl.replace('60x60q90','430x430q90')
         print(bigPicUrl)
         d['pic'].append(bigPicUrl)
-    with open("data/%s.json"%url.split('=')[1],"w+") as f:
+    with open("data/%s.json"%url.split('=')[-1],"w+") as f:
         json.dump(d,f)
 
     driver.quit()

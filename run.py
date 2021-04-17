@@ -56,7 +56,7 @@ driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
 headers=ChangeCookies(driver,headers)
 
 InfoList = list()
-for i in range(0, 1):
+for i in range(0, 100):
     r = requests.get(searchListUrl+str(44*i), headers=headers)
     try:
         d = json.loads(re.findall(r"g_page_config = (.+?);\n", r.text)[0])
