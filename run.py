@@ -42,7 +42,7 @@ def ChangeCookies(driver,headers):
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-automation'])
 options.add_argument("--disable-blink-features=AutomationControlled")
-#options.add_argument("--incognito")  # 配置隐私模式
+options.add_argument("--incognito")  # 配置隐私模式
 # 减少打印
 options.add_argument('log-level=3')
 driver = webdriver.Chrome(options=options)
@@ -71,6 +71,7 @@ for i in range(0, 100):
             break
     InfoList.append(d)
     print(44*i, len(InfoList))
+driver.quit()
 
 
 headers = {
