@@ -5,7 +5,7 @@ import time
 import json
 
 
-def jiexi_ziye_data(url):
+def jiexi_ziye_data(url,xiaoliang):
     option = webdriver.ChromeOptions()
     option.add_experimental_option('excludeSwitches', ['enable-automation'])
     # 无头模式
@@ -51,23 +51,29 @@ def jiexi_ziye_data(url):
     try:
         parent_elem = driver.find_element_by_xpath('//*[@id="J_AttrUL"]')
         child_elements = parent_elem.find_elements_by_xpath('.//*')
+        attrDict=dict()
         for conent in child_elements:
+            cList=conent.text.split("：")
+            attrDict[cList[0]]=cList[1]
             print(conent.text)
     except:
         pass
     d = dict()
+    d["goodId"]=url.split('=')[-1]
     d['shop_name'] = shop_name
     d['pinpaimingcheng'] = pinpaimingcheng
     d['shop_introduction'] = shop_introduction
     d['price'] = price
+    d['xiaoliang']=xiaoliang
     d['star'] = star
     d['url'] = url
     d['pic'] = list()
+    d['attr']=attrDict
     print('店铺名称：', shop_name)
     print('品牌名称：', pinpaimingcheng)
     print('商品介绍：', shop_introduction)
     print('价格：', price)
-    #print('月销量：', xiaoliang)
+    print('月销量：', xiaoliang)
     print('评分：', star)
     print('当前的url是：', url)
     for link in driver.find_elements_by_xpath("//*[@alt='商品预览图']"):
@@ -75,7 +81,10 @@ def jiexi_ziye_data(url):
         bigPicUrl = smpicUrl.replace('60x60q90', '430x430q90')
         print(bigPicUrl)
         d['pic'].append(bigPicUrl)
-    with open("data/%s.json" % url.split('=')[-1], "w+") as f:
-        json.dump(d, f)
-
+    # with open("data/%s.json" % url.split('=')[-1], "w+") as f:
+    #     json.dump(d, f)
     driver.quit()
+    return d
+
+if __name__ == "__main__":
+    jiexi_ziye_data("https://detail.tmall.com/item.htm?id=639393424095",1)

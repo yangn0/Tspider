@@ -9,18 +9,63 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.service import Service
 import time
-import jiexi_data 
+import jiexi_data
+from xpinyin import Pinyin
+import os
+import datetime
+import csv
 
 url = "https://detail.tmall.com/item.htm?id=%s"
 
-searchListUrl = "https://s.taobao.com/search?q=灯具&s="
 
 headers = {
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36",
 }
 
 
-def ChangeCookies(driver,headers):
+def mk_dir_file(name, PcNum, path='D:\\goods'):
+
+    year = str(datetime.datetime.now().year)
+    if datetime.datetime.now().month < 10:
+        month = '0'+str(datetime.datetime.now().month)
+    else:
+        month = str(datetime.datetime.now().month)
+    if datetime.datetime.now().day < 10:
+        day = '0'+str(datetime.datetime.now().day)
+    else:
+        day = str(datetime.datetime.now().day)
+    if not os.path.exists(os.path.join(path, year)):
+        year_path = os.path.join(path, year)
+        os.makedirs(year_path)
+        path = os.path.join(path, year)
+    else:
+        path = os.path.join(path, year)
+    if not os.path.exists(os.path.join(path, month)):
+        month_path = os.path.join(path, month)
+        os.makedirs(month_path)
+        path = os.path.join(path, month)
+    else:
+        path = os.path.join(path, month)
+    if not os.path.exists(os.path.join(path, day)):
+        day_path = os.path.join(path, day)
+        os.makedirs(day_path)
+        path = os.path.join(path, day)
+    else:
+        path = os.path.join(path, day)
+    p = Pinyin()
+    # path_taobao = str(PcNum)+'_pdd_'+p.get_pinyin(name, '')+int(time.time()*100)
+    # if not os.path.exists(os.path.join(path, path_pdd)):
+    #     path_pdd = os.path.join(path, path_pdd)
+    #     os.makedirs(path_pdd)
+    #     path = os.path.join(path, path_pdd)
+    # else:
+    #     path = os.path.join(path, path_pdd) #如果没有这个path则直接创建
+    path = os.path.join(path, "%s_%s_%s_%s.csv" %
+                        (pcNum, "tb", p.get_pinyin(name, ""), day))
+    return path
+
+
+def ChangeCookies(driver, headers):
     # oldCookies = headers['cookie']
     # cookiesDictList = list()
     # for i in oldCookies.split(';'):
@@ -39,60 +84,103 @@ def ChangeCookies(driver,headers):
     return headers
 
 
-options = webdriver.ChromeOptions()
-options.add_experimental_option('excludeSwitches', ['enable-automation'])
-options.add_argument("--disable-blink-features=AutomationControlled")
-options.add_argument("--incognito")  # 配置隐私模式
-# 减少打印
-options.add_argument('log-level=3')
-driver = webdriver.Chrome(options=options)
-driver.maximize_window()
-with open('stealth.min.js') as f:
-    js = f.read()
-driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-    "source": js
-})
+if __name__ == "__main__":
+    searchPage = 1  # 爬取页数
+    pcNum = "X1"  # 机器号
 
-headers=ChangeCookies(driver,headers)
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option('excludeSwitches', ['enable-automation'])
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("--incognito")  # 配置隐私模式
+    # 减少打印
+    options.add_argument('log-level=3')
+    driver = webdriver.Chrome(options=options)
+    driver.maximize_window()
+    with open('stealth.min.js') as f:
+        js = f.read()
+    driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
+        "source": js
+    })
+    searchNameList = ["壁灯", "吊灯", "吸顶灯", "落地灯", "吊扇灯", "客厅灯", "卧室灯", "LED灯", "照明灯", "灯罩灯", "台灯", "床头灯", "应急灯筒灯", "射灯", "天花灯", "厨卫灯", "节能灯",
+                      "荧光灯", "白炽灯", "路灯", "水晶灯", "过道灯", "中式灯", "阳台灯", "美式灯", "日式灯", "欧式灯", "韩式灯", "地中海灯", "儿童灯", "轨道灯", "镜前灯", "杀菌灯", "麻将灯", "庭院灯", "卫浴灯", "浴霸灯"]
+    headers = {}
+    for searchName in searchNameList:
 
-InfoList = list()
-for i in range(0, 100):
-    r = requests.get(searchListUrl+str(44*i), headers=headers)
-    try:
-        d = json.loads(re.findall(r"g_page_config = (.+?);\n", r.text)[0])
-    except Exception as e:
-        print(e)
-        if("验证码" in r.text):
-            # 更换cookies
-            headers = ChangeCookies(driver,headers)
-        else:
-            with open("%s.html" % time.time(), "w") as f:
-                f.write(r.text)
-            break
-    InfoList.append(d)
-    print(44*i, len(InfoList))
-driver.quit()
+        csv_path = mk_dir_file(searchName, pcNum,)
+        with open(csv_path, "a", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["商品ID", "店铺名称", "品牌名称", "介绍", "价格",
+                             "月销量", "评分", "url", "picUrl", "图片本地path","属性"])
 
+        dir_path = os.path.dirname(csv_path)
 
-headers = {
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36",
-}
-idList = list()
-for d in InfoList:
-    for u in d['mods']['itemlist']['data']['auctions']:
-        idList.append(u["nid"])
+        searchListUrl = "https://s.taobao.com/search?q=%s&s=" % (searchName)
+        InfoList = list()
+        for i in range(0, searchPage):
+            while(1):
+                try:
+                    r = requests.get(searchListUrl+str(44*i), headers=headers)
+                    d = json.loads(re.findall(
+                        r"g_page_config = (.+?);\n", r.text)[0])
+                    break
+                except Exception as e:
+                    print(e)
+                    if("验证码" in r.text):
+                        # 更换cookies
+                        headers = ChangeCookies(driver, headers)
+                        continue
+                    else:
+                        with open("error-%s-%s.html" % (searchName, time.time()), "w") as f:
+                            f.write(r.text)
+                        break
+            InfoList.append(d)
+            print(44*i, len(InfoList))
+        # 商品子页
+        headers = {
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36",
+        }
+        idList = list()
+        salesList = list()
+        for d in InfoList:
+            for u in d['mods']['itemlist']['data']['auctions']:
+                idList.append(u["nid"])
+                salesList.append(u['view_sales'])
 
-# 去重
-idSet=list(set(idList))
+        # 去重
+        idSet = list(set(idList))
 
-for n,nid in enumerate(idList):
-    print(n)
-    try:
-        jiexi_data.jiexi_ziye_data(url % nid)
-    except:
-        print("pass")
-    # r = requests.get(url % nid, headers=headers)
-    # soup = BeautifulSoup(r.text, 'lxml')
-    # title = soup.select('h1')[1].text.strip()
+        for n, nid in enumerate(idList):
+            print(n)
+            try:
+                data = jiexi_data.jiexi_ziye_data(url % nid, salesList[n])
+            except:
+                print("pass")
+            # 保存图片
+            data['pic_path']=list()
+            if not os.path.exists( os.path.join(dir_path, data["goodId"]) ):
+                os.mkdir(os.path.join(dir_path, data["goodId"]))
+            pic_path=os.path.join(dir_path, data["goodId"])
+            for count,pic in enumerate(data['pic']):
+                image = requests.get(pic)
+                f = open(os.path.join(pic_path,str(count)+'.jpg'), 'wb')
+                #将下载到的图片数据写入文件
+                f.write(image.content)
+                f.close()
+                data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg'))
+            # 保存
+            with open(csv_path, "a", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerow([data["goodId"], data['shop_name'], data['pinpaimingcheng'], data['shop_introduction'], data['price'],
+                                 data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']),json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
 
-print("完成")
+    # goods/
+    #   2021/
+    #       04/
+    #           20/
+    #               B1_pdd_dengju_20.csv
+    #               B1_pdd_dengju_16189063191/         id
+    #                   1.jpg
+
+    # "xxx/x/01.jpg,xxxxx/02.jpg"
+
+    input("全部完成")

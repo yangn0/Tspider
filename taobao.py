@@ -1,7 +1,4 @@
-# coding=gbk
-# coding=gbk
 from selenium import webdriver
-import jiexi_data
 import time
 import csv
 import os
@@ -19,7 +16,7 @@ def search_product(key):
     drop_down(driver)
     #token = 100  # int(re.findall(r'\d+', token)[0])
     time.sleep(25)
-#µã»÷ËÑË÷
+#ç‚¹å‡»æœç´¢
 
 def next_page(key):
     token = 100
@@ -49,7 +46,7 @@ def drop_down(driver_used):
         j = x / 10
         js = 'document.documentElement.scrollTop = document.documentElement.scrollHeight * %f' % j
         driver_used.execute_script(js)
-#ÏÂÀ­ÖÁµ×
+#ä¸‹æ‹‰è‡³åº•
 
 def login(key):
     driver.maximize_window()
@@ -57,9 +54,9 @@ def login(key):
     search_product(key)
     next_page(key)
 
-#¹È¸è´ò¿ªµÇÂ½ÍøÒ³
+#è°·æ­Œæ‰“å¼€ç™»é™†ç½‘é¡µ
 
-def get_data():#¸ÄÏÂÏÂÃæµÄÄÚÈİÈ¥»ñÈ¡ÌÔ±¦×ÓÒ³µÄÊı¾İ
+def get_data():#æ”¹ä¸‹ä¸‹é¢çš„å†…å®¹å»è·å–æ·˜å®å­é¡µçš„æ•°æ®
     driver.implicitly_wait(5)
     data_list_total = []
     divs = driver.find_elements_by_xpath('//div[@class="items"]/div[@class="item J_MouserOnverReq  "]')
@@ -78,7 +75,7 @@ def get_data():#¸ÄÏÂÏÂÃæµÄÄÚÈİÈ¥»ñÈ¡ÌÔ±¦×ÓÒ³µÄÊı¾İ
 
 # def save_data(key, page_number):
 #     data_list_total = get_data()
-#     csvFile = open(r'E:\taobao_data\{}\µÚ{}Ò³.csv'.format(key, page_number), 'w')
+#     csvFile = open(r'E:\taobao_data\{}\ç¬¬{}é¡µ.csv'.format(key, page_number), 'w')
 #     try:
 #         writer = csv.writer(csvFile)
 #         for i in data_list_total:
@@ -88,10 +85,10 @@ def get_data():#¸ÄÏÂÏÂÃæµÄÄÚÈİÈ¥»ñÈ¡ÌÔ±¦×ÓÒ³µÄÊı¾İ
 
 
 def start():
-    keywords = input("ÇëÊäÈëÒªËÑË÷µÄÉÌÆ·Ãû³Æ£º")
+    keywords = input("è¯·è¾“å…¥è¦æœç´¢çš„å•†å“åç§°ï¼š")
     login(keywords)
     next_page(keywords)
-#¿ªÊ¼
+#å¼€å§‹
 
 def mkdir(keywords):
     os.mkdir(r'E:\taobao_data\{}'.format(keywords))
@@ -106,7 +103,7 @@ def mkdir(keywords):
 
 
 if __name__ == '__main__':
-    # ¼ÓÆô¶¯ÅäÖÃ
+    # åŠ å¯åŠ¨é…ç½®
     option = webdriver.ChromeOptions()
     option.add_argument(r'--user-data-dir=C:\Users\Liu\AppData\Local\Google\Chrome\User Data')
     option.add_experimental_option('excludeSwitches', ['enable-automation'])
