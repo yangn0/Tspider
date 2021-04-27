@@ -166,12 +166,15 @@ if __name__ == "__main__":
                 continue
             pic_path=os.path.join(dir_path, data["goodId"])
             for count,pic in enumerate(data['pic']):
-                image = requests.get(pic)
-                f = open(os.path.join(pic_path,str(count)+'.jpg'), 'wb')
-                #将下载到的图片数据写入文件
-                f.write(image.content)
-                f.close()
-                data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg'))
+                try:
+                    image = requests.get(pic)
+                    f = open(os.path.join(pic_path,str(count)+'.jpg'), 'wb')
+                    #将下载到的图片数据写入文件
+                    f.write(image.content)
+                    f.close()
+                    data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg'))
+                except:
+                    continue
             # 保存
             with open(csv_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
