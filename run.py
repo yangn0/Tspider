@@ -107,7 +107,7 @@ if __name__ == "__main__":
     for searchName in searchNameList:
 
         csv_path = mk_dir_file(searchName, pcNum,)
-        with open(csv_path, "a", newline="", encoding="gbk") as f:
+        with open(csv_path, "a", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(["网站来源","商品ID", "店铺名称", "商品名称", "价格",
                              "销量", "评分", "url", "picUrl", "图片本地path","属性"])
@@ -173,11 +173,11 @@ if __name__ == "__main__":
                     #将下载到的图片数据写入文件
                     f.write(image.content)
                     f.close()
-                    data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg'))
+                    data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg').split('\\\\',1)[1])
                 except:
                     continue
             # 保存
-            with open(csv_path, "a", newline="", encoding="gbk") as f:
+            with open(csv_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
                 writer.writerow(["淘宝",data["goodId"], data['shop_name'], data['pinpaimingcheng'], data['shop_introduction'], data['price'],
                                  data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']),json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
