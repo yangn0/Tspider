@@ -155,10 +155,15 @@ if __name__ == "__main__":
                 data = jiexi_data.jiexi_ziye_data(url % nid, salesList[n])
             except:
                 print("pass")
+                continue
             # 保存图片
             data['pic_path']=list()
-            if not os.path.exists( os.path.join(dir_path, data["goodId"]) ):
-                os.mkdir(os.path.join(dir_path, data["goodId"]))
+            data["goodId"]=nid
+            try:
+                if not os.path.exists( os.path.join(dir_path, data["goodId"]) ):
+                    os.mkdir(os.path.join(dir_path, data["goodId"]))
+            except:
+                continue
             pic_path=os.path.join(dir_path, data["goodId"])
             for count,pic in enumerate(data['pic']):
                 image = requests.get(pic)

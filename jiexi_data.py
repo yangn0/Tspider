@@ -59,7 +59,6 @@ def jiexi_ziye_data(url,xiaoliang):
     except:
         pass
     d = dict()
-    d["goodId"]=url.split('=')[-1]
     d['shop_name'] = shop_name
     d['pinpaimingcheng'] = pinpaimingcheng
     d['shop_introduction'] = shop_introduction
