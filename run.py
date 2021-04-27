@@ -107,10 +107,10 @@ if __name__ == "__main__":
     for searchName in searchNameList:
 
         csv_path = mk_dir_file(searchName, pcNum,)
-        with open(csv_path, "a", newline="", encoding="utf-8") as f:
+        with open(csv_path, "a", newline="", encoding="gbk") as f:
             writer = csv.writer(f)
-            writer.writerow(["商品ID", "店铺名称", "品牌名称", "介绍", "价格",
-                             "月销量", "评分", "url", "picUrl", "图片本地path","属性"])
+            writer.writerow(["网站来源","商品ID", "店铺名称", "商品名称", "价格",
+                             "销量", "评分", "url", "picUrl", "图片本地path","属性"])
 
         dir_path = os.path.dirname(csv_path)
 
@@ -166,6 +166,7 @@ if __name__ == "__main__":
                 continue
             pic_path=os.path.join(dir_path, data["goodId"])
             for count,pic in enumerate(data['pic']):
+                count+=1
                 try:
                     image = requests.get(pic)
                     f = open(os.path.join(pic_path,str(count)+'.jpg'), 'wb')
@@ -176,9 +177,9 @@ if __name__ == "__main__":
                 except:
                     continue
             # 保存
-            with open(csv_path, "a", newline="", encoding="utf-8") as f:
+            with open(csv_path, "a", newline="", encoding="gbk") as f:
                 writer = csv.writer(f)
-                writer.writerow([data["goodId"], data['shop_name'], data['pinpaimingcheng'], data['shop_introduction'], data['price'],
+                writer.writerow(["淘宝",data["goodId"], data['shop_name'], data['pinpaimingcheng'], data['shop_introduction'], data['price'],
                                  data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']),json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
 
     # goods/
