@@ -85,7 +85,7 @@ def ChangeCookies(driver, headers):
 
 
 if __name__ == "__main__":
-    searchPage = 1  # 爬取页数
+    searchPage = 100  # 爬取页数
     pcNum = "X1"  # 机器号
 
     options = webdriver.ChromeOptions()
