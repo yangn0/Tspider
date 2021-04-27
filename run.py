@@ -130,7 +130,7 @@ if __name__ == "__main__":
                         headers = ChangeCookies(driver, headers)
                         continue
                     else:
-                        with open("error-%s-%s.html" % (searchName, time.time()), "w") as f:
+                        with open("error-%s-%s.html" % (searchName, time.time()), "w",encoding="utf-8") as f:
                             f.write(r.text)
                         continue
             InfoList.append(d)
