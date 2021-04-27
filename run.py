@@ -132,7 +132,7 @@ if __name__ == "__main__":
                     else:
                         with open("error-%s-%s.html" % (searchName, time.time()), "w") as f:
                             f.write(r.text)
-                        break
+                        continue
             InfoList.append(d)
             print(44*i, len(InfoList))
         # 商品子页
