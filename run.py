@@ -85,7 +85,7 @@ def ChangeCookies(driver, headers):
 
 
 if __name__ == "__main__":
-    searchPage = 100  # 爬取页数
+    searchPage = 100 # 爬取页数
     pcNum = "X1"  # 机器号
 
     options = webdriver.ChromeOptions()
@@ -173,7 +173,7 @@ if __name__ == "__main__":
                     #将下载到的图片数据写入文件
                     f.write(image.content)
                     f.close()
-                    data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg').split('\\\\',1)[1])
+                    data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg').split('\\',1)[1])
                 except:
                     continue
             # 保存
