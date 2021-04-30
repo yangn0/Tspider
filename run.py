@@ -105,7 +105,6 @@ if __name__ == "__main__":
                       "荧光灯", "白炽灯", "路灯", "水晶灯", "过道灯", "中式灯", "阳台灯", "美式灯", "日式灯", "欧式灯", "韩式灯", "地中海灯", "儿童灯", "轨道灯", "镜前灯", "杀菌灯", "麻将灯", "庭院灯", "卫浴灯", "浴霸灯"]
     headers = {}
     for searchName in searchNameList:
-
         csv_path = mk_dir_file(searchName, pcNum,)
         with open(csv_path, "a", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)

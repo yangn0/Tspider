@@ -47,7 +47,7 @@ def jiexi_ziye_data(url,xiaoliang):
                 '//*[@id="shop-info"]/div[2]/div[1]/div[2]/span').text
     except:
         star = -1
-    url = driver.current_url
+    # url = driver.current_url
     try:
         parent_elem = driver.find_element_by_xpath('//*[@id="J_AttrUL"]')
         child_elements = parent_elem.find_elements_by_xpath('.//*')
@@ -57,7 +57,7 @@ def jiexi_ziye_data(url,xiaoliang):
             attrDict[cList[0]]=cList[1]
             print(conent.text)
     except:
-        pass
+        attrDict=dict()
     d = dict()
     d['shop_name'] = shop_name
     d['pinpaimingcheng'] = pinpaimingcheng
