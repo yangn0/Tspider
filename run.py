@@ -160,7 +160,7 @@ if __name__ == "__main__":
                         continue
                     break
                 except:
-                    print("again")
+                    print("again",url % nid)
                     whileFlag-=1
                     if whileFlag<=0:
                         break
