@@ -150,14 +150,14 @@ if __name__ == "__main__":
 
         for n, nid in enumerate(idList):
             print(n)
-            #while(1):
-            try:
-                data = jiexi_data.jiexi_ziye_data(url % nid, salesList[n])
-                if len(data['pic'])==0:
+            while(1):
+                try:
+                    data = jiexi_data.jiexi_ziye_data(url % nid, salesList[n])
+                    if len(data['pic'])==0:
+                        continue
+                except:
+                    print("again")
                     continue
-            except:
-                print("again")
-                continue
             # 保存图片
             data['pic_path']=list()
             data["goodId"]=nid

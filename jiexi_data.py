@@ -106,7 +106,7 @@ def jiexi_ziye_data(url, xiaoliang):
     
     for link in imgs:
         print(link)
-        d['pic'].append(link)
+        d['pic'].append("http:"+link)
     # with open("data/%s.json" % url.split('=')[-1], "w+") as f:
     #     json.dump(d, f)
   #  driver.quit()
