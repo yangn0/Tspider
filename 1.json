@@ -1,0 +1,592 @@
+{
+    "valItemInfo": {
+        "skuList": [
+            {
+                "names": "\u519b\u7eff\u8272 ",
+                "pvs": "1627207:3232483",
+                "skuId": "4805876643747"
+            },
+            {
+                "names": "\u5929\u84dd\u8272 ",
+                "pvs": "1627207:3232484",
+                "skuId": "4805876643748"
+            },
+            {
+                "names": "\u5de7\u514b\u529b\u8272 ",
+                "pvs": "1627207:3232481",
+                "skuId": "4805876643745"
+            },
+            {
+                "names": "\u6854\u8272 ",
+                "pvs": "1627207:90554",
+                "skuId": "4805876643751"
+            },
+            {
+                "names": "\u6d45\u7070\u8272 ",
+                "pvs": "1627207:28332",
+                "skuId": "4628325572487"
+            },
+            {
+                "names": "\u6d45\u7eff\u8272 ",
+                "pvs": "1627207:30156",
+                "skuId": "4805876643741"
+            },
+            {
+                "names": "\u6d45\u9ec4\u8272 ",
+                "pvs": "1627207:60092",
+                "skuId": "4805876643749"
+            },
+            {
+                "names": "\u6df1\u5361\u5176\u5e03\u8272 ",
+                "pvs": "1627207:3232482",
+                "skuId": "4805876643746"
+            },
+            {
+                "names": "\u6df1\u7070\u8272 ",
+                "pvs": "1627207:3232478",
+                "skuId": "4805876643742"
+            },
+            {
+                "names": "\u6df1\u7d2b\u8272 ",
+                "pvs": "1627207:3232479",
+                "skuId": "4805876643743"
+            },
+            {
+                "names": "\u6df1\u84dd\u8272 ",
+                "pvs": "1627207:28340",
+                "skuId": "4805876643739"
+            },
+            {
+                "names": "\u767d\u8272 ",
+                "pvs": "1627207:28320",
+                "skuId": "4805876643732"
+            },
+            {
+                "names": "\u7c89\u7ea2\u8272 ",
+                "pvs": "1627207:3232480",
+                "skuId": "4805876643744"
+            },
+            {
+                "names": "\u7d2b\u7f57\u5170 ",
+                "pvs": "1627207:80882",
+                "skuId": "4805876643750"
+            },
+            {
+                "names": "\u7d2b\u8272 ",
+                "pvs": "1627207:28329",
+                "skuId": "4805876643736"
+            },
+            {
+                "names": "\u7ea2\u8272 ",
+                "pvs": "1627207:28326",
+                "skuId": "4805876643734"
+            },
+            {
+                "names": "\u7eff\u8272 ",
+                "pvs": "1627207:28335",
+                "skuId": "4805876643737"
+            },
+            {
+                "names": "\u82b1\u8272 ",
+                "pvs": "1627207:130164",
+                "skuId": "4805876643730"
+            },
+            {
+                "names": "\u84dd\u8272 ",
+                "pvs": "1627207:28338",
+                "skuId": "4805876643738"
+            },
+            {
+                "names": "\u8910\u8272 ",
+                "pvs": "1627207:132069",
+                "skuId": "4805876643731"
+            },
+            {
+                "names": "\u900f\u660e ",
+                "pvs": "1627207:107121",
+                "skuId": "4805876643729"
+            },
+            {
+                "names": "\u9152\u7ea2\u8272 ",
+                "pvs": "1627207:28327",
+                "skuId": "4805876643735"
+            },
+            {
+                "names": "\u9ec4\u8272 ",
+                "pvs": "1627207:28324",
+                "skuId": "4805876643733"
+            },
+            {
+                "names": "\u9ed1\u8272 ",
+                "pvs": "1627207:28341",
+                "skuId": "4805876643740"
+            }
+        ],
+        "defSelected": [],
+        "skuMap": {
+            ";1627207:28335;": {
+                "priceCent": 1053900,
+                "price": "10539.00",
+                "stock": 5000,
+                "skuId": "4805876643737"
+            },
+            ";1627207:28324;": {
+                "priceCent": 1398300,
+                "price": "13983.00",
+                "stock": 4998,
+                "skuId": "4805876643733"
+            },
+            ";1627207:28326;": {
+                "priceCent": 1053900,
+                "price": "10539.00",
+                "stock": 4999,
+                "skuId": "4805876643734"
+            },
+            ";1627207:28341;": {
+                "priceCent": 1446600,
+                "price": "14466.00",
+                "stock": 5000,
+                "skuId": "4805876643740"
+            },
+            ";1627207:28320;": {
+                "priceCent": 935100,
+                "price": "9351.00",
+                "stock": 4998,
+                "skuId": "4805876643732"
+            },
+            ";1627207:80882;": {
+                "priceCent": 1215900,
+                "price": "12159.00",
+                "stock": 4999,
+                "skuId": "4805876643750"
+            },
+            ";1627207:28332;": {
+                "priceCent": 357000,
+                "price": "3570.00",
+                "stock": 4971,
+                "skuId": "4628325572487"
+            },
+            ";1627207:60092;": {
+                "priceCent": 627700,
+                "price": "6277.00",
+                "stock": 4996,
+                "skuId": "4805876643749"
+            },
+            ";1627207:3232479;": {
+                "priceCent": 447000,
+                "price": "4470.00",
+                "stock": 4997,
+                "skuId": "4805876643743"
+            },
+            ";1627207:3232478;": {
+                "priceCent": 387000,
+                "price": "3870.00",
+                "stock": 4996,
+                "skuId": "4805876643742"
+            },
+            ";1627207:28340;": {
+                "priceCent": 597000,
+                "price": "5970.00",
+                "stock": 4998,
+                "skuId": "4805876643739"
+            },
+            ";1627207:132069;": {
+                "priceCent": 1206900,
+                "price": "12069.00",
+                "stock": 4995,
+                "skuId": "4805876643731"
+            },
+            ";1627207:3232484;": {
+                "priceCent": 785700,
+                "price": "7857.00",
+                "stock": 4999,
+                "skuId": "4805876643748"
+            },
+            ";1627207:3232482;": {
+                "priceCent": 260700,
+                "price": "2607.00",
+                "stock": 4986,
+                "skuId": "4805876643746"
+            },
+            ";1627207:3232483;": {
+                "priceCent": 1251900,
+                "price": "12519.00",
+                "stock": 5000,
+                "skuId": "4805876643747"
+            },
+            ";1627207:90554;": {
+                "priceCent": 447000,
+                "price": "4470.00",
+                "stock": 4990,
+                "skuId": "4805876643751"
+            },
+            ";1627207:3232480;": {
+                "priceCent": 1341900,
+                "price": "13419.00",
+                "stock": 4997,
+                "skuId": "4805876643744"
+            },
+            ";1627207:3232481;": {
+                "priceCent": 357000,
+                "price": "3570.00",
+                "stock": 4988,
+                "skuId": "4805876643745"
+            },
+            ";1627207:130164;": {
+                "priceCent": 1311900,
+                "price": "13119.00",
+                "stock": 5000,
+                "skuId": "4805876643730"
+            },
+            ";1627207:30156;": {
+                "priceCent": 687000,
+                "price": "6870.00",
+                "stock": 4995,
+                "skuId": "4805876643741"
+            },
+            ";1627207:107121;": {
+                "priceCent": 1245900,
+                "price": "12459.00",
+                "stock": 4999,
+                "skuId": "4805876643729"
+            },
+            ";1627207:28338;": {
+                "priceCent": 1108800,
+                "price": "11088.00",
+                "stock": 5000,
+                "skuId": "4805876643738"
+            },
+            ";1627207:28327;": {
+                "priceCent": 1020900,
+                "price": "10209.00",
+                "stock": 5000,
+                "skuId": "4805876643735"
+            },
+            ";1627207:28329;": {
+                "priceCent": 1228200,
+                "price": "12282.00",
+                "stock": 5000,
+                "skuId": "4805876643736"
+            }
+        },
+        "salesProp": {}
+    },
+    "valLoginIndicator": "//buy.taobao.com/auction/buy.htm?from=itemDetail&id=606692587551",
+    "isShowSizeRecommend": false,
+    "isDoubleElevenItem": true,
+    "isHouseholdService": false,
+    "isSevenDaysRefundment": true,
+    "apiBidCount": "//tbskip.taobao.com/json/show_bid_count.htm?itemNumId=606692587551&old_quantity=10000&date=1619426593000",
+    "valTimeLeft": 23264,
+    "standingDate": 0,
+    "tradeParams": {},
+    "api": {
+        "descUrl": "//dscnew.taobao.com/i1/600/690/606692587551/TB1q9wgvcVl614jSZKP8quGjpla.desc%7Cvar%5Edesc%3Bsign%5E6474b95aaa869a75b8f48a070b6c0025%3Blang%5Egbk%3Bt%5E1619798916",
+        "httpsDescUrl": "//descnew.taobao.com/i1/600/690/606692587551/TB1q9wgvcVl614jSZKP8quGjpla.desc%7Cvar%5Edesc%3Bsign%5E6474b95aaa869a75b8f48a070b6c0025%3Blang%5Egbk%3Bt%5E1619798916",
+        "fetchDcUrl": "//hdc1new.taobao.com/asyn.htm?pageId=1688648683&userId=2183118489"
+    },
+    "tag": {
+        "isShowMeiliXinde": false,
+        "isMedical": false,
+        "isRightRecommend": true,
+        "isShowEcityIcon": false,
+        "isShowYuanchuanIcon": false,
+        "isBrandAttr": true,
+        "isShowTryReport": false,
+        "isAsynDesc": true,
+        "isBrandSiteRightColumn": true,
+        "isShowHouseIcon": false
+    },
+    "isService": false,
+    "isTripUser": false,
+    "cmCatId": "0",
+    "cartEnable": true,
+    "renderSystemServer": "//render.taobao.com",
+    "carCascade": false,
+    "isWTContract": false,
+    "isOnlyInMobile": false,
+    "isAreaSell": false,
+    "isMultiPoint": false,
+    "isShowSizeHelper": false,
+    "isMeiz": false,
+    "newSelectCityApi": "//mdskip.taobao.com/json/detailSelectCity.do?isAreaSell=false&itemId=606692587551",
+    "initCspuExtraApi": "//ext-mdskip.taobao.com/extension/initCspuExtra.htm",
+    "detail": {
+        "isMemberShopItem": false,
+        "isBundleItem": false,
+        "canEditInItemDet": true,
+        "isAllowReport": true,
+        "isHiddenShopAction": false,
+        "isDownShelf": false,
+        "is0YuanBuy": false,
+        "isCarService": false,
+        "isShowEcityBasicSign": false,
+        "isItemAllowSellerView": true,
+        "goNewAuctionFlow": false,
+        "isShowEcityVerticalSign": false,
+        "reviewListType": 1,
+        "rxShowTitle": "\u672c\u54c1\u4e3a\u5904\u65b9\u836f\uff0c\u8bf7\u5728\u533b\u5e08\u6307\u5bfc\u4e0b\u4f7f\u7528\u3002",
+        "isVaccine": false,
+        "isHasPos": false,
+        "recommendBigMarkDownEndTime": "1477880000000",
+        "isAutoYushou": false,
+        "isOnePriceCar": false,
+        "isVitual3C": false,
+        "rxIcon": "https://gw.alicdn.com/tfs/TB13T_zHHrpK1RjSZTEXXcWAVXa-216-84.png",
+        "isFullCarSell": false,
+        "isHideAttentionBtn": false,
+        "isNABundleItem": false,
+        "double11StartTime": "",
+        "showDiscountRecommend": false,
+        "enableAliMedicalComponent": true,
+        "isOtcDrug": false,
+        "isYYZY": false,
+        "mlhNewDesc": false,
+        "isMainLiaoSku": false,
+        "isHkMilk": false,
+        "isEnableAppleSku": true,
+        "isHkItem": false,
+        "isShowContentModuleTitle": false,
+        "isRx2Count": true,
+        "isHiddenNonBuyprice": false,
+        "isH5NewLogin": true,
+        "isHkO2OItem": false,
+        "isSavingEnergy": false,
+        "showFushiPoiInfo": false,
+        "defaultItemPrice": "2607.00 - 14466.00",
+        "globalSellItem": false,
+        "isShowEcityDesc": false,
+        "isSkuColorShow": false,
+        "autoccUser": false,
+        "isMenDianInventroy": false,
+        "isMeilihui": false,
+        "isLadderGroupon": false,
+        "isHidePoi": false,
+        "isNewAttraction": true,
+        "isPreSellBrand": false,
+        "loginBeforeCart": false,
+        "isAutoFinancing": false,
+        "showSuperMarketBuy": false,
+        "isPrescriptionDrug": false,
+        "isHasQualification": false,
+        "recommendBigMarkDownStartTime": "1478793600000",
+        "pageType": "default",
+        "isIFCShop": false,
+        "isAlicomMasterCard": false,
+        "isCarCascade": false,
+        "isDianQiMeiJia": false,
+        "isSkuMemorized": false,
+        "addressLevel": 4,
+        "isRx2": false,
+        "isTeMai": false,
+        "allowRate": true,
+        "isShowPreClosed": false,
+        "isO2OStaging": false,
+        "isPurchaseMallVipBuyer": false,
+        "cdn75": false,
+        "isNewMedical": false,
+        "isCarYuEBao": false,
+        "isAliHouse": false,
+        "isCyclePurchase": false,
+        "isChineseMedicinalMaterial": false,
+        "isAliTelecomNew": false,
+        "show9sVideo": true,
+        "isHkDirectSale": false,
+        "isTspace": false,
+        "tryReportDisable": false,
+        "isB2Byao": false,
+        "isRegionLevel": false,
+        "isContractPhoneItem": false,
+        "isYY": false,
+        "supermarketAndQianggou": false,
+        "isZhengChe": false,
+        "isDianZiMendian": false,
+        "isNextDayService": false,
+        "timeKillAuction": false
+    },
+    "apiAddCart": "//cart.taobao.com/add_cart_item.htm?item_id=606692587551",
+    "apiBeans": "//count.taobao.com/counter3?keys=SM_368_dsr-2183118489,ICCP_1_606692587551",
+    "idsMod": [],
+    "initApi": "//mdskip.taobao.com/core/initItemDetail.htm?isUseInventoryCenter=false&cartEnable=true&service3C=false&isApparel=false&isSecKill=false&tmallBuySupport=true&isAreaSell=false&tryBeforeBuy=false&offlineShop=false&itemId=606692587551&showShopProm=false&isPurchaseMallPage=false&itemGmtModified=1620007790000&isRegionLevel=false&household=false&sellerPreview=false&queryMemberRight=true&addressLevel=4&isForbidBuyItem=false",
+    "valPointTimes": 1.0,
+    "changeLocationApi": "//mdskip.taobao.com/core/changeLocation.htm?isUseInventoryCenter=false&cartEnable=true&sellerUserTag3=144467031796777088&service3C=false&sellerUserTag2=18014536485306368&isSecKill=false&isAreaSell=false&sellerUserTag4=387&offlineShop=false&itemId=606692587551&sellerUserTag=125255532&showShopProm=false&tgTag=false&isPurchaseMallPage=false&isRegionLevel=false&household=false&notAllowOriginPrice=false&addressLevel=4",
+    "isTmallComboSupport": false,
+    "serviceIconList": [],
+    "valPointRate": 0.5,
+    "tradeType": 2,
+    "valMode": 128,
+    "initExtraApi": "//ext-mdskip.taobao.com/extension/initExtra.htm",
+    "itemDO": {
+        "isInRepository": false,
+        "isSupportTryBeforeBuy": false,
+        "reservePrice": "3570.00",
+        "imgVedioPic": "https://img.alicdn.com/imgextra/i1/2183118489/O1CN01xhSfnv2Ca0sYC3TkP_!!2183118489.jpg",
+        "isSecondKillFromMobile": false,
+        "cspuCategorySwitch": false,
+        "isOnline": true,
+        "title": "\u540e\u73b0\u4ee3\u8f7b\u5962\u540a\u706f\u6c34\u6676\u5ba2\u5385\u706f\u7b80\u7ea6\u5927\u6c14\u5168\u94dc\u9ad8\u6863\u9910\u5385\u5367\u5ba4\u706f\u9970\u5317\u6b27\u706f\u5177",
+        "isEnterprisePath": false,
+        "showCompanyPurchase": false,
+        "isDcAsyn": true,
+        "feature": "1",
+        "attachImgUrl": [],
+        "isElecCouponItem": false,
+        "brandSiteId": "0",
+        "brandSpecialSold": "false",
+        "sellerNickName": "%E5%B8%8C%E5%B0%94%E9%A1%BF%E7%81%AF%E5%85%B7%E6%97%97%E8%88%B0%E5%BA%97",
+        "isSecondKillFromPC": false,
+        "auctionType": "b",
+        "encryptSellerId": "UvCH4vGHYOmQ4OQTT",
+        "prov": "\u5e7f\u4e1c",
+        "brand": "\u5e0c\u5c14\u987f",
+        "imgVedioUrl": "//cloud.video.taobao.com/play/u/2183118489/p/1/e/1/t/8/269054183703.swf",
+        "isDefaultChooseTryBeforeBuy": false,
+        "quantity": 119901,
+        "isBidden": false,
+        "hasSku": true,
+        "isNewProGroup": false,
+        "weight": "0",
+        "imgVedioID": "269054183703",
+        "userId": "2183118489",
+        "rootCatId": "126700003",
+        "itemId": "606692587551",
+        "validatorUrl": "//store.taobao.com/tadget/shop_stats.htm",
+        "isCustomizedItem": false,
+        "auctionStatus": "0",
+        "isSecondKillFromPCAndWap": false,
+        "brandId": "3289953",
+        "sellProgressiveRate": "3_100_1.60;6_0_4.50;9_0_6.00",
+        "spuId": "1965996264",
+        "categoryId": "201534603"
+    },
+    "rateConfig": {
+        "itemId": 606692587551,
+        "sellerId": 2183118489,
+        "rateScoreCacheDisable": false,
+        "rateSubjectDisable": false,
+        "tryReportDisable": false,
+        "rateScoreDisable": false,
+        "rateEnable": true,
+        "spuId": 1965996264,
+        "rateNewChartDisable": false,
+        "listType": 1,
+        "rateCloudDisable": false
+    },
+    "rstShopId": 112913084,
+    "propertyPics": {
+        ";1627207:28324;": [
+            "//img.alicdn.com/imgextra/i3/2183118489/O1CN01jSrKCK2Ca0sZ5Q0LV_!!2183118489.jpg"
+        ],
+        ";1627207:28326;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN01Rzg3sa2Ca0sZ5M2r6_!!2183118489.jpg"
+        ],
+        ";1627207:80882;": [
+            "//img.alicdn.com/imgextra/i4/2183118489/O1CN01jcU5yw2Ca0sWtkziH_!!2183118489.jpg"
+        ],
+        ";1627207:28320;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN014j8DhS2Ca0sKrOVcZ_!!2183118489.jpg"
+        ],
+        ";1627207:28332;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN01ICplKb2Ca0saVY54d_!!2183118489.jpg"
+        ],
+        ";1627207:60092;": [
+            "//img.alicdn.com/imgextra/i3/2183118489/O1CN01g11ELj2Ca0sPaTdcg_!!2183118489.jpg"
+        ],
+        ";1627207:3232479;": [
+            "//img.alicdn.com/imgextra/i2/2183118489/O1CN01BJLizJ2Ca0sTS1aea_!!2183118489.jpg"
+        ],
+        ";1627207:28340;": [
+            "//img.alicdn.com/imgextra/i3/2183118489/O1CN01VuYRuL2Ca0sW6qC9V_!!2183118489.jpg"
+        ],
+        ";1627207:132069;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN01G6bnws2Ca0sQw49Co_!!2183118489.jpg"
+        ],
+        ";1627207:3232483;": [
+            "//img.alicdn.com/imgextra/i2/2183118489/O1CN01Hc9xvg2Ca0sZ5GbcT_!!2183118489.jpg"
+        ],
+        "default": [
+            "//img.alicdn.com/imgextra/https://img.alicdn.com/imgextra/i1/2183118489/O1CN01xhSfnv2Ca0sYC3TkP_!!2183118489.jpg",
+            "//img.alicdn.com/imgextra/https://img.alicdn.com/imgextra/i4/2183118489/O1CN017Cdb4V2Ca0rXLcF17_!!2183118489.jpg",
+            "//img.alicdn.com/imgextra/https://img.alicdn.com/imgextra/i2/2183118489/O1CN01yQ1V432Ca0rMymB1R_!!2183118489.jpg",
+            "//img.alicdn.com/imgextra/https://img.alicdn.com/imgextra/i2/2183118489/O1CN01S63Jw72Ca0rZ1A0i3_!!2183118489.jpg",
+            "//img.alicdn.com/imgextra/https://img.alicdn.com/imgextra/i4/2183118489/O1CN017UEFrj2Ca0rNCVAXT_!!2183118489.jpg"
+        ],
+        ";1627207:3232481;": [
+            "//img.alicdn.com/imgextra/i4/2183118489/O1CN01OPUrQ82Ca0sW6iD07_!!2183118489.jpg"
+        ],
+        ";1627207:130164;": [
+            "//img.alicdn.com/imgextra/i3/2183118489/O1CN01nh5EZG2Ca0sYOhPpl_!!2183118489.jpg"
+        ],
+        ";1627207:107121;": [
+            "//img.alicdn.com/imgextra/i3/2183118489/O1CN01DLM4Yd2Ca0sTW4XCd_!!2183118489.jpg"
+        ],
+        ";1627207:28338;": [
+            "//img.alicdn.com/imgextra/i2/2183118489/O1CN01YSFEsH2Ca0sXOKo1c_!!2183118489.jpg"
+        ],
+        ";1627207:28335;": [
+            "//img.alicdn.com/imgextra/i2/2183118489/O1CN013jDAMG2Ca0sZuYYzF_!!2183118489.jpg"
+        ],
+        ";1627207:28341;": [
+            "//img.alicdn.com/imgextra/i2/2183118489/O1CN01jBO0Ub2Ca0sUhUWdt_!!2183118489.jpg"
+        ],
+        ";1627207:3232478;": [
+            "//img.alicdn.com/imgextra/i3/2183118489/O1CN01JXmCwB2Ca0sRVw73n_!!2183118489.jpg"
+        ],
+        ";1627207:3232484;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN01qY7Ijk2Ca0sPaRHuX_!!2183118489.jpg"
+        ],
+        ";1627207:3232482;": [
+            "//img.alicdn.com/imgextra/i3/2183118489/O1CN01Uq3Gll2Ca0sUhHlkl_!!2183118489.jpg"
+        ],
+        ";1627207:90554;": [
+            "//img.alicdn.com/imgextra/i4/2183118489/O1CN01Mgq9A02Ca0sUxsP9Y_!!2183118489.jpg"
+        ],
+        ";1627207:3232480;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN01uhyXKZ2Ca0sZuVPQM_!!2183118489.jpg"
+        ],
+        ";1627207:30156;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN01S2NWja2Ca0sKrNV0e_!!2183118489.jpg"
+        ],
+        ";1627207:28327;": [
+            "//img.alicdn.com/imgextra/i4/2183118489/O1CN01CBCjra2Ca0sZ5QwWj_!!2183118489.jpg"
+        ],
+        ";1627207:28329;": [
+            "//img.alicdn.com/imgextra/i1/2183118489/O1CN01vgPvOc2Ca0saVgXKZ_!!2183118489.jpg"
+        ]
+    },
+    "tmallRateType": 0,
+    "selectRegionApi": "//mdskip.taobao.com/core/selectRegion.do?isAreaSell=false&itemId=606692587551",
+    "apiItemViews": "//count.taobao.com/counter2?keys=ICVT_7_606692587551&inc=ICVT_7_606692587551&sign=98503c1372bb6d29d2702bff429a3c92ed0",
+    "tagsId": "123905,166402,16897,2049,249858,221697,144385,2563,148993,156673,158721,490498,508418,4614,2059,4619,7179,23563,1473026,1440770,1807362,1833474,1618946,1665026,1666562,1902082,89665,91713,36417,37953,212546,241218,249922,48706,49218,218177,235585,237121,253505,189505,393794,455234,281666,4678,4166,11846,369218,544322,2635,11339,1443906,1499202,1552962,1706562,1768002,1791554,1798210,1587778,1596994,1666626,1845314,91777,109697,115329,22145,51329,64129,249986,256130,28802,200321,218241,243329,131713,123010,150145,160897,188545,413314,452738,520322,522882,269442,284802,349826,1163,1675,6283,22155,1478274,1508482,1549442,1418882,1434754,1712770,1744002,1587842,1602178,1648770,1702530,1848962,1858690,84673,108225,5825,28353,37569,257218,2242,25282,57026,79042,149697,159937,177857,493250,317634,2247,368834,203,4811,7371,11467,23755,1252034,1567938,1849026,123649,31489,65281,259842,51458,215809,258305,90370,70402,149761,187649,192769,508674,292098,391426,542466,7947,1286402,1391874,1750274,1584898,1627906,1655042,1846530,1859330,70465,84801,87361,122177,39233,200002,202050,255297,258369,107842,73538,141121,454466,3911,368450,764738,843,11083,12107,15691,1474370,1549122,1348418,1389890,1713474,1765698,1619266,1648962,1649474,1651522,112001,106881,143746,385,199553,253313,86402,101762,186753,191873,444802,299394,3974,348546,349570,907,4491,1281410,1502082,1429890,1769346,1829762,1861506,33217,26561,35265,21442,218049,2499,113602,417218,427458,493506,519106,299458,1478,360386,364482,761282,531906,4043,2507,1995,16843,22987,1253314,1295810,1310146,1487810,1497538,1548738,1429442,1615810,1649090,1664962,1666498,1691586,1887682",
+    "url": {
+        "tbskip": "//tbskip.taobao.com",
+        "mdskip": "//mdskip.taobao.com",
+        "tradeForOldTmallBuy": "//stay.buy.tmall.com/order/confirm_order.htm",
+        "tgDetailDomain": "//detail.ju.taobao.com",
+        "detailServer": "//detail.taobao.com",
+        "buyBase": "//buy.taobao.com/auction",
+        "mallList": "//list.tmall.com",
+        "extMdskip": "//ext-mdskip.taobao.com",
+        "xCrossServer": "//mdetail.tmall.com",
+        "tgDomain": "//ju.taobao.com",
+        "rate": "//rate.tmall.com",
+        "tradeBaseUrl": "//trade.taobao.com/trade",
+        "topUploadServerBaseUrl": "//upload.taobao.com",
+        "BIDRedirectionitemDomain": "//paimai.taobao.com"
+    },
+    "tradeConfig": {
+        "1": "//buy.taobao.com/auction/buy_now.jhtml",
+        "2": "//buy.tmall.com/order/confirm_order.htm",
+        "3": "//obuy.tmall.com/home/order/confirm_order.htm",
+        "4": "",
+        "7": "//tw.taobao.com/buy/auction/buy_now.jhtml"
+    },
+    "valCartInfo": {
+        "itemId": "606692587551",
+        "cartUrl": "//cart.taobao.com/my_cart.htm?from=bdetail",
+        "statsUrl": "//go.mmstat.com/1.gif?logtype=2&category=cart_{loc}_201534603"
+    },
+    "isAliTripHK": false,
+    "selectCityApi": "//mdskip.taobao.com/core/selectCity.htm?isAreaSell=false&itemId=606692587551",
+    "getProgressiveInfoApi": "//mdskip.taobao.com/core/getProgressiveInfo.do?platform_type=b2c&fromTryBeforeBuy=false&sellerId=2183118489&platform=tmall&category=201534603&sellerPercent=3_100_1.60;6_0_4.50;9_0_6.00"
+}
