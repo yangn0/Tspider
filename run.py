@@ -156,11 +156,14 @@ if __name__ == "__main__":
                     data = jiexi_data.jiexi_ziye_data(url % nid, salesList[n])
                     if len(data['pic'])==0:
                         if whileFlag<=0:
+                            print("whileFlag<=0 again",url % nid)
                             break
                         continue
                     break
                 except:
                     print("again",url % nid)
+                    with open ("error.log","a") as f:
+                        f.write(str(datetime.datetime.now())+" "+url % nid+"\n")
                     whileFlag-=1
                     if whileFlag<=0:
                         break
@@ -194,7 +197,7 @@ if __name__ == "__main__":
             # 保存
             with open(csv_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
-                writer.writerow(["淘宝",data["goodId"], data['shop_name'], data['pinpaimingcheng'], data['shop_introduction'], data['price'],
+                writer.writerow(["淘宝",data["goodId"], data['shop_name'], data['shop_introduction'], data['price'],
                                  data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']),json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
 
     # goods/
