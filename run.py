@@ -141,19 +141,22 @@ if __name__ == "__main__":
         idList = list()
         salesList = list()
         for d in InfoList:
-            for u in d['mods']['itemlist']['data']['auctions']:
-                idList.append(u["nid"])
-                salesList.append(u['view_sales'])
+            try:
+                for u in d['mods']['itemlist']['data']['auctions']:
+                    idList.append(u["nid"])
+                    salesList.append(u['view_sales'])
+            except:
+                continue
 
         # 去重
         idSet = list(set(idList))
 
         for n, nid in enumerate(idList):
             print(n)
-            whileFlag=5
+            whileFlag=3
             while(1):
                 try:
-                    data = jiexi_data.jiexi_ziye_data(url % nid, salesList[n])
+                    data = jiexi_data.jiexi_ziye_data_se(url % nid, salesList[n])
                     if len(data['pic'])==0:
                         if whileFlag<=0:
                             print("whileFlag<=0 again",url % nid)
@@ -161,11 +164,12 @@ if __name__ == "__main__":
                         continue
                     break
                 except:
-                    print("again",url % nid)
-                    with open ("error.log","a") as f:
-                        f.write(str(datetime.datetime.now())+" "+url % nid+"\n")
+                    print("again%s"%whileFlag,url % nid)
                     whileFlag-=1
+                    time.sleep(1)
                     if whileFlag<=0:
+                        with open ("error.log","a") as f:
+                            f.write(str(datetime.datetime.now())+" "+url % nid+"\n")
                         break
                     continue
             if whileFlag<=0:
@@ -181,19 +185,21 @@ if __name__ == "__main__":
             pic_path=os.path.join(dir_path, data["goodId"])
             for count,pic in enumerate(data['pic']):
                 count+=1
-                try:
-                    imageText='img_none'
-                    image = requests.get(pic)
-                    imageText=image.text
-                    f = open(os.path.join(pic_path,str(count)+'.jpg'), 'wb')
-                    #将下载到的图片数据写入文件
-                    f.write(image.content)
-                    f.close()
-                    data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg').split('\\',1)[1])
-                except Exception as e:
-                    print(repr(e))
-                    print(imageText)
-                    continue
+                while(1):
+                    try:
+                        imageText='img_none'
+                        image = requests.get(pic)
+                        imageText=image.text
+                        f = open(os.path.join(pic_path,str(count)+'.jpg'), 'wb')
+                        #将下载到的图片数据写入文件
+                        f.write(image.content)
+                        f.close()
+                        data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg').split('\\',1)[1])
+                        break
+                    except Exception as e:
+                        print(repr(e))
+                        print(imageText)
+                        continue
             # 保存
             with open(csv_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
