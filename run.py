@@ -14,7 +14,7 @@ from xpinyin import Pinyin
 import os
 import datetime
 import csv
-
+import dingRobot
 url = "https://detail.tmall.com/item.htm?id=%s"
 
 
@@ -105,6 +105,9 @@ if __name__ == "__main__":
                       "荧光灯", "白炽灯", "路灯", "水晶灯", "过道灯", "中式灯", "阳台灯", "美式灯", "日式灯", "欧式灯", "韩式灯", "地中海灯", "儿童灯", "轨道灯", "镜前灯", "杀菌灯", "麻将灯", "庭院灯", "卫浴灯", "浴霸灯"]
     headers = {}
     for searchName in searchNameList:
+        searchNameErrorNum=0
+        searchNameNum=0
+        dingRobot.sendText(str(datetime.datetime.now())+" 机器号：%s 淘宝 正在爬取关键字:%s"%(pcNum,searchName))
         csv_path = mk_dir_file(searchName, pcNum,)
         with open(csv_path, "a", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
@@ -126,6 +129,7 @@ if __name__ == "__main__":
                     print(e)
                     if("验证码" in r.text):
                         # 更换cookies
+                        dingRobot.sendText(str(datetime.datetime.now())+"机器号：%s 淘宝 验证码"%pcNum)
                         headers = ChangeCookies(driver, headers)
                         continue
                     else:
@@ -168,6 +172,7 @@ if __name__ == "__main__":
                     whileFlag-=1
                     time.sleep(1)
                     if whileFlag<=0:
+                        searchNameErrorNum+=1
                         with open ("error.log","a") as f:
                             f.write(str(datetime.datetime.now())+" "+url % nid+"\n")
                         break
@@ -201,10 +206,12 @@ if __name__ == "__main__":
                         print(imageText)
                         continue
             # 保存
+            searchNameNum+=1
             with open(csv_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
                 writer.writerow(["淘宝",data["goodId"], data['shop_name'], data['shop_introduction'], data['price'],
                                  data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']),json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
+        dingRobot.sendText(str(datetime.datetime.now())+" 机器号：%s 淘宝 关键字:%s爬取完成 成功%s条 失败%s条"%(pcNum,searchName,searchNameNum,searchNameErrorNum))
 
     # goods/
     #   2021/

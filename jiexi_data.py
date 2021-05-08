@@ -59,7 +59,11 @@ def jiexi_ziye_data_se(url, xiaoliang):
             shop_name = driver.find_element_by_css_selector(
                 '.tb-shop-name').text
         except:
-            shop_name = -1
+            try:
+                shop_name = driver.find_element_by_css_selector(
+                'div.shop-name > div.shop-name-wrap > a').text 
+            except:
+                shop_name = -1
     try:
         if driver.find_element_by_xpath('/html/body/div/div/div/div/div/div/div/div/h1').text:
             shop_introduction = driver.find_element_by_xpath(
@@ -94,7 +98,11 @@ def jiexi_ziye_data_se(url, xiaoliang):
             star = driver.find_element_by_css_selector(
                 '.tb-shop-rate > dl:nth-child(1) > dd > a').text
         except:
-            star = -1
+            try:
+                star = driver.find_element_by_css_selector(
+                    'div.shop-service-info > ul > li:nth-child(1) > span.rateinfo > em').text
+            except:
+                star = -1
     # url = driver.current_url
     attrDict = dict()
     try:
@@ -262,5 +270,5 @@ def jiexi_ziye_data(url, xiaoliang):
 
 if __name__ == "__main__":
     r = jiexi_ziye_data_se(
-        "https://detail.tmall.com/item.htm?id=558606692909", 1)
+        "https://detail.tmall.com/item.htm?id=573481226938", 1)
     input()
