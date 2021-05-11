@@ -161,6 +161,7 @@ if __name__ == "__main__":
             while(1):
                 try:
                     data = jiexi_data.jiexi_ziye_data_se(url % nid, salesList[n])
+                    whileFlag-=1
                     if len(data['pic'])==0:
                         if whileFlag<=0:
                             print("whileFlag<=0 again",url % nid)
