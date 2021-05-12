@@ -15,6 +15,7 @@ import os
 import datetime
 import csv
 import dingRobot
+import traceback
 url = "https://detail.tmall.com/item.htm?id=%s"
 
 
@@ -142,25 +143,26 @@ if __name__ == "__main__":
         headers = {
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36",
         }
-        idList = list()
-        salesList = list()
+        idsalesDict = dict()
+        #salesList = list()
         for d in InfoList:
             try:
                 for u in d['mods']['itemlist']['data']['auctions']:
-                    idList.append(u["nid"])
-                    salesList.append(u['view_sales'])
+                    idsalesDict[u["nid"]]=u['view_sales']
+                    # idList.append(u["nid"])
+                    # salesList.append(u['view_sales'])
             except:
                 continue
 
         # 去重
-        idSet = list(set(idList))
+        # idSet = list(set(idList))
 
-        for n, nid in enumerate(idList):
+        for n, nid in enumerate(idsalesDict):
             print(n)
             whileFlag=3
             while(1):
                 try:
-                    data = jiexi_data.jiexi_ziye_data_se(url % nid, salesList[n])
+                    data = jiexi_data.jiexi_ziye_data_se(url % nid, idsalesDict[nid])
                     whileFlag-=1
                     if len(data['pic'])==0:
                         if whileFlag<=0:
@@ -169,6 +171,7 @@ if __name__ == "__main__":
                         continue
                     break
                 except:
+                    traceback.print_exc()
                     print("again%s"%whileFlag,url % nid)
                     whileFlag-=1
                     time.sleep(1)
