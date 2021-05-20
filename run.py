@@ -86,7 +86,7 @@ def ChangeCookies(driver, headers):
 
 
 if __name__ == "__main__":
-    searchPage = 100 # 爬取页数
+    searchPage = 100  # 爬取页数
     pcNum = "X1"  # 机器号
 
     options = webdriver.ChromeOptions()
@@ -102,18 +102,26 @@ if __name__ == "__main__":
     driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
         "source": js
     })
+    # 珠宝
+    # searchNameList = [
+    #     "黄金项链", "黄金吊坠 ", "黄金转运珠", "黄金戒指", "黄金手镯", "黄金手链/脚链", "黄金耳饰", "钻戒", "钻石项链/吊坠", "钻石手镯/手链", "钻石耳饰", "裸钻", "彩宝", "K金吊坠", "K金项链", "K金戒指", "K金手镯/手链/脚链", "K金耳饰", "铂金 ", "翡翠手镯",
+    #     "翡翠吊坠", "翡翠耳饰", "和田玉吊坠", "和田玉手链", "和田玉戒指", "珍珠项链 ", "珍珠手链", "珍珠耳饰", "珍珠戒指",
+    #     "水晶玛瑙手链", "水晶玛瑙项链", "水晶玛瑙耳饰", "水晶玛瑙戒指", "银手镯", "银项链", "银手链", "银戒指", "银耳饰", "宝宝银饰", "投资金", "投资银", "投资收藏"
+    # ]
+
     searchNameList = ["壁灯", "吊灯", "吸顶灯", "落地灯", "吊扇灯", "客厅灯", "卧室灯", "LED灯", "照明灯", "灯罩灯", "台灯", "床头灯", "应急灯筒灯", "射灯", "天花灯", "厨卫灯", "节能灯",
                       "荧光灯", "白炽灯", "路灯", "水晶灯", "过道灯", "中式灯", "阳台灯", "美式灯", "日式灯", "欧式灯", "韩式灯", "地中海灯", "儿童灯", "轨道灯", "镜前灯", "杀菌灯", "麻将灯", "庭院灯", "卫浴灯", "浴霸灯"]
     headers = {}
     for searchName in searchNameList:
-        searchNameErrorNum=0
-        searchNameNum=0
-        dingRobot.sendText(str(datetime.datetime.now())+" 机器号：%s 淘宝 正在爬取关键字:%s"%(pcNum,searchName))
+        searchNameErrorNum = 0
+        searchNameNum = 0
+        dingRobot.sendText(str(datetime.datetime.now()) +
+                           " 机器号：%s 淘宝 正在爬取关键字:%s" % (pcNum, searchName))
         csv_path = mk_dir_file(searchName, pcNum,)
         with open(csv_path, "a", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
-            writer.writerow(["网站来源","商品ID", "店铺名称", "商品名称", "价格",
-                             "销量", "评分", "url", "picUrl", "图片本地path","属性"])
+            writer.writerow(["网站来源", "商品ID", "店铺名称", "商品名称", "价格",
+                             "销量", "评分", "url", "picUrl", "图片本地path", "属性"])
 
         dir_path = os.path.dirname(csv_path)
 
@@ -130,11 +138,12 @@ if __name__ == "__main__":
                     print(e)
                     if("验证码" in r.text):
                         # 更换cookies
-                        dingRobot.sendText(str(datetime.datetime.now())+"机器号：%s 淘宝 验证码"%pcNum)
+                        dingRobot.sendText(
+                            str(datetime.datetime.now())+"机器号：%s 淘宝 验证码" % pcNum)
                         headers = ChangeCookies(driver, headers)
                         continue
                     else:
-                        with open("error-%s-%s.html" % (searchName, time.time()), "w",encoding="utf-8") as f:
+                        with open("error-%s-%s.html" % (searchName, time.time()), "w", encoding="utf-8") as f:
                             f.write(r.text)
                         continue
             InfoList.append(d)
@@ -148,7 +157,7 @@ if __name__ == "__main__":
         for d in InfoList:
             try:
                 for u in d['mods']['itemlist']['data']['auctions']:
-                    idsalesDict[u["nid"]]=u['view_sales']
+                    idsalesDict[u["nid"]] = u['view_sales']
                     # idList.append(u["nid"])
                     # salesList.append(u['view_sales'])
             except:
@@ -159,63 +168,68 @@ if __name__ == "__main__":
 
         for n, nid in enumerate(idsalesDict):
             print(n)
-            whileFlag=3
+            whileFlag = 3
             while(1):
                 try:
-                    data = jiexi_data.jiexi_ziye_data_se(url % nid, idsalesDict[nid])
-                    whileFlag-=1
-                    if len(data['pic'])==0:
-                        if whileFlag<=0:
-                            print("whileFlag<=0 again",url % nid)
+                    data = jiexi_data.jiexi_ziye_data_se(
+                        url % nid, idsalesDict[nid])
+                    whileFlag -= 1
+                    if len(data['pic']) == 0:
+                        if whileFlag <= 0:
+                            print("whileFlag<=0 again", url % nid)
                             break
                         continue
                     break
                 except:
                     traceback.print_exc()
-                    print("again%s"%whileFlag,url % nid)
-                    whileFlag-=1
+                    print("again%s" % whileFlag, url % nid)
+                    whileFlag -= 1
                     time.sleep(1)
-                    if whileFlag<=0:
-                        searchNameErrorNum+=1
-                        with open ("error.log","a") as f:
-                            f.write(str(datetime.datetime.now())+" "+url % nid+"\n")
+                    if whileFlag <= 0:
+                        searchNameErrorNum += 1
+                        with open("error.log", "a") as f:
+                            f.write(str(datetime.datetime.now()) +
+                                    " "+url % nid+"\n")
                         break
                     continue
-            if whileFlag<=0:
+            if whileFlag <= 0:
                 continue
             # 保存图片
-            data['pic_path']=list()
-            data["goodId"]=nid
+            data['pic_path'] = list()
+            data["goodId"] = nid
             try:
-                if not os.path.exists( os.path.join(dir_path, data["goodId"]) ):
+                if not os.path.exists(os.path.join(dir_path, data["goodId"])):
                     os.mkdir(os.path.join(dir_path, data["goodId"]))
             except:
                 continue
-            pic_path=os.path.join(dir_path, data["goodId"])
-            for count,pic in enumerate(data['pic']):
-                count+=1
+            pic_path = os.path.join(dir_path, data["goodId"])
+            for count, pic in enumerate(data['pic']):
+                count += 1
                 while(1):
                     try:
-                        imageText='img_none'
+                        imageText = 'img_none'
                         image = requests.get(pic)
-                        imageText=image.text
-                        f = open(os.path.join(pic_path,str(count)+'.jpg'), 'wb')
-                        #将下载到的图片数据写入文件
+                        imageText = image.text
+                        f = open(os.path.join(
+                            pic_path, str(count)+'.jpg'), 'wb')
+                        # 将下载到的图片数据写入文件
                         f.write(image.content)
                         f.close()
-                        data['pic_path'].append(os.path.join(pic_path,str(count)+'.jpg').split('\\',1)[1])
+                        data['pic_path'].append(os.path.join(
+                            pic_path, str(count)+'.jpg').split('\\', 1)[1])
                         break
                     except Exception as e:
                         print(repr(e))
                         print(imageText)
                         continue
             # 保存
-            searchNameNum+=1
+            searchNameNum += 1
             with open(csv_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.writer(f)
-                writer.writerow(["淘宝",data["goodId"], data['shop_name'], data['shop_introduction'], data['price'],
-                                 data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']),json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
-        dingRobot.sendText(str(datetime.datetime.now())+" 机器号：%s 淘宝 关键字:%s爬取完成 成功%s条 失败%s条"%(pcNum,searchName,searchNameNum,searchNameErrorNum))
+                writer.writerow(["淘宝", data["goodId"], data['shop_name'], data['shop_introduction'], data['price'],
+                                 data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']), json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
+        dingRobot.sendText(str(datetime.datetime.now())+" 机器号：%s 淘宝 关键字:%s爬取完成 成功%s条 失败%s条" %
+                           (pcNum, searchName, searchNameNum, searchNameErrorNum))
 
     # goods/
     #   2021/
