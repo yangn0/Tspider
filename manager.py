@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-url="http://127.0.0.1:5000/"
+url="http://172.16.0.106:5000/"
 
 def getSet():
     r=requests.get(url+"set")
