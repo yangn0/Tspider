@@ -1,53 +1,85 @@
 import requests
 import json
 import time
+import traceback
 
 url="http://172.16.0.106:5000/"
 
 def getSet():
-    r=requests.get(url+"set")
-    d=json.loads(r.text)
-    return d['data']
+    while 1:
+        try:
+            r=requests.get(url+"set")
+            d=json.loads(r.text)
+            return d['data']
+        except:
+            traceback.print_exc()
+            continue
 
 def setStop(pcNum):
-    r=requests.post(url+"set",json={
-        "pcNum": pcNum,
-        "start":-1
-    })
-    d=json.loads(r.text)
-    print(d)
+    while 1:
+        try:
+            r=requests.post(url+"set",json={
+                "pcNum": pcNum,
+                "start":-1
+            })
+            d=json.loads(r.text)
+            print(d)
+            break
+        except:
+            traceback.print_exc()
+            continue
 
 def getPauseAndGoOn(pcNum):
     while(1):
-        r=requests.get(url+"set")
-        d=json.loads(r.text)
-        if(d['data'][pcNum]['start']==-1):
-            return -1
-        if(d['data'][pcNum]['start']==0):
-            while 1:
-                time.sleep(10)
-                print("暂停")
-                r=requests.get(url+"set")
-                d=json.loads(r.text)
-                if d['data'][pcNum]['start']!=0:
-                    break
-        if(d['data'][pcNum]['start']==1):
-             return 1
+        try:
+            r=requests.get(url+"set")
+            d=json.loads(r.text)
+            if(d['data'][pcNum]['start']==-1):
+                return -1
+            if(d['data'][pcNum]['start']==0):
+                while 1:
+                    time.sleep(10)
+                    print("暂停")
+                    r=requests.get(url+"set")
+                    d=json.loads(r.text)
+                    if d['data'][pcNum]['start']!=0:
+                        break
+            if(d['data'][pcNum]['start']==1):
+                return 1
+        except:
+            traceback.print_exc()
+            continue
 
 def postSet(data):
-    r=requests.post(url+"set",json=data)
-    d=json.loads(r.text)
-    print(d)
+    while(1):
+        try:
+            r=requests.post(url+"set",json=data)
+            d=json.loads(r.text)
+            print(d)
+            break
+        except:
+            traceback.print_exc()
+            continue
 
 def getStatus():
-    r=requests.get(url+"status")
-    d=json.loads(r.text)
-    return d
+    while(1):
+        try:
+            r=requests.get(url+"status")
+            d=json.loads(r.text)
+            return d
+        except:
+            traceback.print_exc()
 
 def postStatus(data):
-    r=requests.post(url+"status",json=data)
-    d=json.loads(r.text)
-    print(d)
+    while(1):
+        try:
+            r=requests.post(url+"status",json=data)
+            d=json.loads(r.text)
+            print(d)
+            break
+        except:
+            traceback.print_exc()
+            continue
 
 if __name__ == '__main__':
     print(getSet())
