@@ -245,11 +245,17 @@ if __name__ == "__main__":
                       "荧光灯", "白炽灯", "路灯", "水晶灯", "过道灯", "中式灯", "阳台灯", "美式灯", "日式灯", "欧式灯", "韩式灯", "地中海灯", "儿童灯", "轨道灯", "镜前灯", "杀菌灯", "麻将灯", "庭院灯", "卫浴灯", "浴霸灯"]
     headers = {}
     while(1):
-        nowSet=manager.getSet()
-        nowKeyword=nowSet[pcNum]['keyword']
-        startFlag=nowSet[pcNum]['start']
-        startTime=nowSet[pcNum]['startTime']
-        page=nowSet[pcNum]['page']
+        try:
+            nowSet=manager.getSet()
+            nowKeyword=nowSet[pcNum]['keyword']
+            startFlag=nowSet[pcNum]['start']
+            startTime=nowSet[pcNum]['startTime']
+            page=nowSet[pcNum]['page']
+        except:
+            print("从爬虫管理平台获取信息失败，等待10秒后重试。")
+            traceback.print_exc()
+            time.sleep(10)
+            continue
         if(startFlag!=1 or time.time()<startTime):
             time.sleep(10)
             print("等待开始")
