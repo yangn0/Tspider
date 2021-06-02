@@ -138,6 +138,12 @@ def searchWorker(searchName,searchPage):
         # idSet = list(set(idList))
 
         for n, nid in enumerate(idsalesDict):
+            # 记录当前运行爬虫的
+            if os.path.exists(dir_path+'record_finish_list.txt'):
+                print("查找断点")
+                with open(dir_path+'record_finish_list.txt','r') as f:
+                    if nid in f.read():
+                        continue
 
             mang=manager.getPauseAndGoOn(pcNum)
             if mang==-1:
@@ -205,7 +211,10 @@ def searchWorker(searchName,searchPage):
                 writer = csv.writer(f)
                 writer.writerow(["淘宝", data["goodId"], data['shop_name'], data['shop_introduction'], data['price'],
                                  data['xiaoliang'], data['star'], data['url'], json.dumps(data['pic']), json.dumps(data['pic_path']), json.dumps(data['attr'], ensure_ascii=False)])
-
+            
+            with open(dir_path+'record_finish_list.txt', 'a') as f:
+                    f.writelines(nid+'\n')
+                    
             # 更新管理系统状态
             manager.postStatus({
                 "pcNum": pcNum,
