@@ -47,6 +47,8 @@ def jiexi_ziye_data_se(url, xiaoliang):
     option.add_experimental_option('excludeSwitches', ['enable-automation'])
     # 无头模式
     option.add_argument('--headless')
+    # 减少打印
+    option.add_argument('log-level=3')
     driver = webdriver.Chrome(options=option)
     driver.get(url)
     driver.implicitly_wait(5)

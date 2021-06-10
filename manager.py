@@ -3,7 +3,7 @@ import json
 import time
 import traceback
 
-url="http://172.16.0.106:5000/"
+url="http://172.16.3.135:5000/"
 
 def getSet():
     while 1:
